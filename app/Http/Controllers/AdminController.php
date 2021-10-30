@@ -93,7 +93,6 @@ class AdminController extends Controller
     public function reservation(Request $request)
     {
 
-       
         $create=$this->reservation->create([
             
             'name'=>$request->name,

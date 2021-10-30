@@ -32,7 +32,7 @@
       <td class="table-light">{{$data->email}}</td>
       <td class="table-light">{{$data->phone}}</td>
       <td class="table-light">{{$data->guest}}</td>
-      <td class="table-light">{{$data->data}}</td>
+      <td class="table-light">{{$data->date}}</td>
       <td class="table-light">{{$data->time}}</td>
       <td class="table-light">{{$data->message}}</td>  
     </tr>
