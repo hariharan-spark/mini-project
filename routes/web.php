@@ -31,32 +31,29 @@ Route::post('/orderconfirm',[HomeController::class,"orderConfirm"]);
 
 
 
-
-
+//user
 Route::get('/users',[AdminController::class,"userList"]);
 Route::post('/deleteuser',[AdminController::class,"deleteUser"]);
+
+//food
 Route::get('/foodmenu',[AdminController::class,"foodMenu"]);
 Route::post('/foodupload',[AdminController::class,"foodUpload"]);
 Route::post('/updatefood',[AdminController::class,"updateFood"]);
 Route::post('/deletefoodmenu',[AdminController::class,"deleteFoodMenu"]);
+
+//Reservation 
 Route::post('/reservation',[AdminController::class,"reservation"]);
 Route::get('/reservationlist',[AdminController::class,"reservationList"]);
+
+//chefs
 Route::get('/chefs',[AdminController::class,"chefs"]);
 Route::post('/uploadchefs',[AdminController::class,"uploadChefs"]);
 Route::post('/updatechefs',[AdminController::class,"updateChefs"]);
 Route::post('/deletechefs',[AdminController::class,"deleteChefs"]);
+
+//order List
 Route::get('/orders',[AdminController::class,"order"]);
 Route::get('/search',[AdminController::class,"search"]);
-
-
-
-
-
-
-
-
-
-
 
 
 
