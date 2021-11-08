@@ -98,7 +98,7 @@
                                             @if($data->image)
                                            <img src="/documents/{{$data->image}}" height="70" width="70">
                                              @endif
-                                            <input type="file" class="form-control" name="image" value="{{$data->image }}" required>
+                                            <input type="file" class="form-control" name="image" value="{{$data->image }}" >
                                     </div>
 
                                    

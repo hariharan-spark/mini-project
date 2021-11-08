@@ -22,6 +22,10 @@ Route::get('/',[HomeController::class,"index"]);
 Route::get('/redirects',[HomeController::class,"redirects"]);
 Route::post('/addcart/{id}',[HomeController::class,"addCard"]);
 Route::get('/showcard/{id}',[HomeController::class,"showCard"]);
+Route::get('/remove/{id}',[HomeController::class,"remove"]);
+Route::post('/orderconfirm',[HomeController::class,"orderConfirm"]);
+
+
 
 
 
@@ -41,6 +45,10 @@ Route::get('/chefs',[AdminController::class,"chefs"]);
 Route::post('/uploadchefs',[AdminController::class,"uploadChefs"]);
 Route::post('/updatechefs',[AdminController::class,"updateChefs"]);
 Route::post('/deletechefs',[AdminController::class,"deleteChefs"]);
+Route::get('/orders',[AdminController::class,"order"]);
+Route::get('/search',[AdminController::class,"search"]);
+
+
 
 
 

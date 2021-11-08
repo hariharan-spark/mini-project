@@ -9,6 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <title>Klassy Cafe - Restaurant HTML Template</title>
 <!--
@@ -52,7 +53,10 @@ https://templatemo.com/tm-558-klassy-cafe
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="assets/images/klassy-logo.png" align="klassy cafe html template">
+                            <!-- <img src="assets/images/klassy-logo.png" align="klassy cafe html template"> -->
+                            <a class="menu-trigger">
+                                <span>Menu</span>
+                            </a>
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -89,7 +93,7 @@ https://templatemo.com/tm-558-klassy-cafe
 
                             @auth
                             <a href="{{url('/showcard',Auth::user()->id)}}">
-                                Card
+                                Card{{$count}}
                             </a>  
                             @endauth    
                             @guest
@@ -127,6 +131,105 @@ https://templatemo.com/tm-558-klassy-cafe
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
+
+<div id="top">
+    <table align="center" bgcolor="yellow">
+<tr>
+    <th style="padding:30px;">Food Name</th>
+    <th style="padding:30px;">Price</th>
+    <th style="padding:30px;">Quantity</th>
+    <th style="padding:30px;">Action</th>
+
+</tr>
+
+<form action="{{url('/orderconfirm')}}" method="post">
+@csrf
+@foreach($datas as $data)
+<tr align="center">
+<td>
+    <input type="text" name="foodname[]" value=" {{$data->title}}" hidden="">
+    {{$data->title}}
+</td>
+<td>
+    <input type="text" name="price[]" value=" {{$data->price}}" hidden="">
+    {{$data->price}}
+</td>
+<td>
+    <input type="text" name="quantity[]" value=" {{$data->quantity}}" hidden="">
+    {{$data->quantity}}
+</td>
+
+
+</tr>
+@endforeach
+
+@foreach($datas2 as $data)
+<tr style="position: relative; top:-60px; right:-360px;">
+<td ><a href="{{url('/remove',$data->id)}}" class= "btn btn-warning">Remove</a></td>
+</tr>
+@endforeach
+
+    </table>
+
+
+
+    <div align="center" style="padding:10px;">
+    <button class="btn btn-primary" type="button" id="order">Order Now</button>
+    </div>
+</div>
+<div id="appear" class="container-fluid" style="width:70rem; display:none">
+  
+  <div class="form-group-row">
+    <div class="form-group col-md-6">
+      <label >Name</label>
+      <input  type="text" class="form-control"name="name"  required>
+  </div>
+  <div class="form-group col-md-6">
+      <label >Phone Number</label>
+      <input  type="number" class="form-control" name="phone"  required>
+  </div>
+  <div class="form-group col-md-6">
+      <label >Address</label>
+      <input type="text" class="form-control" name="address"  required>
+  </div>
+
+  <div>
+  <input class="btn btn-success" type="submit" value="Order Confirm">
+  <button id="close" class="btn btn-danger" type="button">Close</button>
+  </div>
+
+
+</div>
+</form>
+
+
+<script>
+    $('#order').click(
+      
+      function()
+      {
+          $('#appear').show();
+      }
+      
+    );
+    $('#close').click(
+      
+      function()
+      {
+          $('#appear').hide();
+      }
+      
+    );
+</script>
+
+
+
+
+
+
+
+
+
     <!-- jQuery -->
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 
