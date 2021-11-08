@@ -5,13 +5,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
     @include("admin.admincss")
   </head>
   <body>
   <div class="container-scroller">
    @include("admin.navbar")
-   <table class="table table-light table-striped "style="width:70rem;">
+   
+
+ <table class="table table-light table-striped "style="width:70rem;">
   <thead>
     <tr>
       <th scope="col">Name</th>
@@ -68,9 +76,6 @@
 
 @endforeach
 </table>
-   
-
- 
 </div>
   
   
