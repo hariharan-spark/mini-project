@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Klassy Cafe - Restaurant HTML Template</title>
+    <title>Cafe - Restaurant HTML Template</title>
 <!--
     
 TemplateMo 558 Klassy Cafe
@@ -61,8 +61,8 @@ https://templatemo.com/tm-558-klassy-cafe
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
+                            <li class="scroll-to-section"><a href="{{url('/')}}" class="active">Home</a></li>
+                            <!-- <li class="scroll-to-section"><a href="#about">About</a></li> -->
                            	
                         <!-- 
                             <li class="submenu">
@@ -74,7 +74,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                 </ul>
                             </li>
                         -->
-                            <li class="scroll-to-section"><a href="#menu">Menu</a></li>
+                            <!-- <li class="scroll-to-section"><a href="#menu">Menu</a></li>
                             <li class="scroll-to-section"><a href="#chefs">Chefs</a></li> 
                             <li class="submenu">
                                 <a href="javascript:;">Features</a>
@@ -84,9 +84,9 @@ https://templatemo.com/tm-558-klassy-cafe
                                     <li><a href="#">Features Page 3</a></li>
                                     <li><a href="#">Features Page 4</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
-                            <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li> 
+                            <!-- <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>  -->
                             <li>
 
                             <li class="scroll-to-section">
@@ -138,7 +138,8 @@ https://templatemo.com/tm-558-klassy-cafe
     <th style="padding:30px;">Food Name</th>
     <th style="padding:30px;">Price</th>
     <th style="padding:30px;">Quantity</th>
-    <th style="padding:30px;">Action</th>
+    <th style="padding:30px;">Total Price</th>
+    <!-- <th style="padding:30px;">Action</th> -->
 
 </tr>
 
@@ -158,16 +159,19 @@ https://templatemo.com/tm-558-klassy-cafe
     <input type="text" name="quantity[]" value=" {{$data->quantity}}" hidden="">
     {{$data->quantity}}
 </td>
-
+<td>
+    <input type="text" name="quantity[]" value=" {{$data->quantity*$data->price}}" hidden="">
+    {{$data->quantity*$data->price}}
+</td>
 
 </tr>
 @endforeach
 
-@foreach($datas2 as $data)
+<!-- @foreach($datas2 as $data)
 <tr style="position: relative; top:-60px; right:-360px;">
 <td ><a href="{{url('/remove',$data->id)}}" class= "btn btn-warning">Remove</a></td>
 </tr>
-@endforeach
+@endforeach -->
 
     </table>
 

@@ -8,6 +8,8 @@ use App\Models\Food;
 use App\Models\Foodchef;
 use App\Models\Card;
 use App\Models\Order;
+use App\Console\Commands\generateUserData;
+
 
 
 
@@ -25,6 +27,7 @@ class HomeController extends Controller
 
     public function index()
     {
+        \Artisan::call('create:generate-users',['count' => 1]);
         if(Auth::id())
         {
             return redirect('redirects');
@@ -58,6 +61,7 @@ class HomeController extends Controller
     {
         if(Auth::id())
         {
+
             $user_id=Auth::id();
             $foodId=$id;
             $quantity=$request->quantity;
@@ -103,6 +107,7 @@ class HomeController extends Controller
 
     public function orderConfirm(Request $request)
     {
+
         foreach($request->foodname as $key=>$foodname)
         {
            $data=new order;
